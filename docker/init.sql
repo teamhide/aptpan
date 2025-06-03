@@ -1,0 +1,2 @@
+CREATE DATABASE aptpan_test;
+GRANT ALL PRIVILEGES ON aptpan_test.* TO aptpan@'%' WITH GRANT OPTION;

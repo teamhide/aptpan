@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    group:
+      default: clients
+      test: clients-test
+      staging: clients-staging
+      prod: clients-prod
+  mvc:
+    static-path-pattern: /test/**
+  main:
+    banner-mode: off
+logging:
+  level:
+    org.springframework.kafka.*: OFF
+    org.springframework.kafka.listener.[KafkaMessageListenerContainer$ListenerConsumer]: OFF
+    org.apache.kafka.*: OFF
+    kafka.*: OFF
+    org.apache.zookeeper.*: OFF
