@@ -1,0 +1,8 @@
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    url: jdbc:mysql://localhost:33061/aptpan_test?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    user: aptpan_test
+    password: aptpan_test
+    locations: classpath:db/migration

@@ -108,7 +108,32 @@ project(":aptpan-presentation") {
         implementation(project(":aptpan-application"))
         implementation(project(":aptpan-domain"))
         implementation(project(":aptpan-infrastructure"))
+        implementation(project(":support:migration"))
         implementation("org.springframework.boot:spring-boot-starter-validation")
         implementation("org.springframework.boot:spring-boot-starter-web")
+    }
+}
+
+project(":support") {
+    subprojects {
+        tasks.bootJar {
+            enabled = false
+        }
+        tasks.jar {
+            enabled = true
+        }
+    }
+}
+
+project(":support:migration") {
+    dependencies {
+        implementation("org.flywaydb:flyway-core")
+        implementation("org.flywaydb:flyway-mysql")
+    }
+}
+
+project(":support:logging") {
+    dependencies {
+        implementation("io.sentry:sentry-logback:7.12.1")
     }
 }
