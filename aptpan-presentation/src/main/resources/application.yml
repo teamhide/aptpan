@@ -3,10 +3,9 @@ server:
 spring:
   profiles:
     group:
-      default: clients
-      test: clients-test
-      staging: clients-staging
-      prod: clients-prod
+      default: application, domain, infrastructure, support-migration
+      test: application-test, domain-test, infrastructure-test, support-migration-test
+      prod: application-prod, domain-prod, infrastructure-prod, support-migration-prod
   mvc:
     static-path-pattern: /test/**
   main:
